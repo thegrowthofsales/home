@@ -1,12 +1,21 @@
-from flask import Flask, render_template, request, jsonify, flash, redirect, url_for
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
+from flask import Flask, render_template, request, jsonify, send_from_directory
 import os
 from datetime import datetime
 
-app = Flask(__name__)
+app = Flask(__name__,
+            static_folder='static',
+            static_url_path='/static',
+            template_folder='templates')
+
 app.secret_key = 'thegrowthofsales_secret_key_2024'
+
+# ============================================================
+# STATIC FILES FIX FOR VERCEL
+# ============================================================
+
+@app.route('/static/<path:filename>')
+def static_files(filename):
+    return send_from_directory(app.static_folder, filename)
 
 # ============================================================
 # COMPANY DATA
@@ -144,32 +153,32 @@ CLIENTS = [
 
 TESTIMONIALS = [
     {
-        'text': 'The Growth of Sales has completely transformed our online presence. Their digital marketing strategies and consistent promotions helped us reach the right audience and significantly improve our brand visibility.',
+        'text': 'The Growth of Sales has completely transformed our online presence.',
         'author': 'Rajesh Kumar',
         'position': 'CEO, Interior Solutions'
     },
     {
-        'text': 'We are very impressed with their professionalism and creativity. From social media management to video production, everything is handled perfectly.',
+        'text': 'We are very impressed with their professionalism and creativity.',
         'author': 'Priya Sharma',
         'position': 'Director, Furniture World'
     },
     {
-        'text': 'Their email marketing and B2B promotions provided us with excellent market exposure. We started receiving quality leads within a short period.',
+        'text': 'Their email marketing and B2B promotions provided us with excellent market exposure.',
         'author': 'Amit Verma',
         'position': 'MD, Hardware Hub'
     },
     {
-        'text': 'The team is extremely supportive and always goes the extra mile. Their daily updates and promotional activities keep our brand active and engaging.',
+        'text': 'The team is extremely supportive and always goes the extra mile.',
         'author': 'Sunita Agarwal',
         'position': 'Owner, Decor Studio'
     },
     {
-        'text': 'We collaborated with them for exhibition stall setup and the execution was flawless. From manpower to complete management, everything was well organized.',
+        'text': 'We collaborated with them for exhibition stall setup and the execution was flawless.',
         'author': 'Vikram Singh',
         'position': 'GM, Building Materials Co.'
     },
     {
-        'text': 'Highly recommended for any business looking to grow. The Growth of Sales truly understands what a brand needs to succeed.',
+        'text': 'Highly recommended for any business looking to grow.',
         'author': 'Neha Gupta',
         'position': 'Founder, Design Interiors'
     }
@@ -241,7 +250,6 @@ def contact():
         subject = request.form.get('subject', '').strip()
         message = request.form.get('message', '').strip()
 
-        # Validation
         errors = []
         if not name:
             errors.append('Name is required.')
@@ -253,8 +261,6 @@ def contact():
         if errors:
             return jsonify({'status': 'error', 'errors': errors}), 400
 
-        # Here you would normally send email
-        # For now we just return success
         return jsonify({
             'status': 'success',
             'message': f'Thank you {name}! We will contact you shortly.'
@@ -273,25 +279,6 @@ def page_not_found(e):
 @app.errorhandler(500)
 def server_error(e):
     return render_template('404.html', company=COMPANY_INFO), 500
-
-# ============================================================
-# LOGO ROUTE - Alternative way to serve logo
-# ============================================================
-
-@app.route('/logo')
-def serve_logo():
-    """Serve logo directly - useful for debugging"""
-    import os
-    logo_path = os.path.join(app.static_folder, 'images', 'logo.png')
-    if os.path.exists(logo_path):
-        return app.send_static_file('images/logo.png')
-    else:
-        # Return list of files in images folder
-        images_dir = os.path.join(app.static_folder, 'images')
-        if os.path.exists(images_dir):
-            files = os.listdir(images_dir)
-            return f"Logo not found. Files in static/images/: {files}"
-        return "static/images/ folder does not exist!"
 
 # ============================================================
 # RUN
