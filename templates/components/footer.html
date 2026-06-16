@@ -1,0 +1,131 @@
+<footer class="footer">
+    <!-- Footer Top Wave -->
+    <div class="footer-wave">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0a0e27"/>
+        </svg>
+    </div>
+
+    <div class="footer-main">
+        <div class="footer-grid">
+
+            <!-- Brand Column -->
+            <div class="footer-col footer-brand" data-aos="fade-up" data-aos-delay="100">
+                <div class="footer-logo">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}"
+                         alt="The Growth of Sales"
+                         onerror="this.style.display='none'">
+                    <h3 class="footer-brand-name">The Growth of <span>Sales</span></h3>
+                </div>
+                <p class="footer-desc">
+                    A dynamic digital media platform dedicated to helping businesses grow, scale,
+                    and establish a powerful presence in today's competitive market.
+                </p>
+                <div class="footer-social">
+                    <a href="{{ company.facebook }}" target="_blank" class="social-link facebook" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="{{ company.instagram }}" target="_blank" class="social-link instagram" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="{{ company.youtube }}" target="_blank" class="social-link youtube" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="{{ company.linkedin }}" target="_blank" class="social-link linkedin" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://wa.me/919910423182" target="_blank" class="social-link whatsapp" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+                <h4 class="footer-heading">
+                    <span class="heading-line"></span> Quick Links
+                </h4>
+                <ul class="footer-links">
+                    <li><a href="{{ url_for('index') }}"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="{{ url_for('about') }}"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="{{ url_for('services') }}"><i class="fas fa-chevron-right"></i> Our Services</a></li>
+                    <li><a href="{{ url_for('industries') }}"><i class="fas fa-chevron-right"></i> Industries</a></li>
+                    <li><a href="{{ url_for('testimonials') }}"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                    <li><a href="{{ url_for('contact') }}"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+                <h4 class="footer-heading">
+                    <span class="heading-line"></span> Our Services
+                </h4>
+                <ul class="footer-links">
+                    <li><a href="{{ url_for('services') }}"><i class="fas fa-chevron-right"></i> Digital Marketing</a></li>
+                    <li><a href="{{ url_for('services') }}"><i class="fas fa-chevron-right"></i> Social Media Management</a></li>
+                    <li><a href="{{ url_for('services') }}"><i class="fas fa-chevron-right"></i> Content Creation</a></li>
+                    <li><a href="{{ url_for('services') }}"><i class="fas fa-chevron-right"></i> Video Editing</a></li>
+                    <li><a href="{{ url_for('services') }}"><i class="fas fa-chevron-right"></i> Graphic Designing</a></li>
+                    <li><a href="{{ url_for('services') }}"><i class="fas fa-chevron-right"></i> Printing Solutions</a></li>
+                    <li><a href="{{ url_for('services') }}"><i class="fas fa-chevron-right"></i> Business Consultancy</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
+                <h4 class="footer-heading">
+                    <span class="heading-line"></span> Contact Us
+                </h4>
+                <div class="footer-contact-items">
+                    <div class="footer-contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <p>Gali No. 3, Jagmal Enclave Part 2,</p>
+                            <p>Roshan Nagar, Faridabad – 121013</p>
+                            <p>Haryana, India</p>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <a href="tel:+919910423182">+91 99104 23182</a>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <a href="mailto:thegrowthofsales@gmail.com">thegrowthofsales@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="contact-text">
+                            <p>Director: Mr. Navneet Kumar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+            <p class="copyright">
+                &copy; {{ company.year }} <span>The Growth of Sales</span>. All Rights Reserved.
+            </p>
+            <p class="made-with">
+                Made with <i class="fas fa-heart"></i> for Business Growth
+            </p>
+        </div>
+    </div>
+</footer>

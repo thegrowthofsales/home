@@ -1,0 +1,531 @@
+{% extends 'base.html' %}
+{% block title %}The Growth of Sales | Empowering Your Business Digitally{% endblock %}
+
+{% block content %}
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero" id="hero">
+    <!-- Animated Background Particles -->
+    <div class="hero-particles" id="heroParticles">
+        <div class="particle"></div><div class="particle"></div>
+        <div class="particle"></div><div class="particle"></div>
+        <div class="particle"></div><div class="particle"></div>
+        <div class="particle"></div><div class="particle"></div>
+    </div>
+
+    <!-- Animated Background Shapes -->
+    <div class="hero-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <div class="hero-container">
+        <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-down" data-aos-delay="200">
+                <i class="fas fa-rocket"></i>
+                <span>Welcome to The Future of Digital Marketing</span>
+            </div>
+
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">
+                <span class="title-line-1">Empowering Your</span>
+                <span class="title-line-2">Business <span class="highlight-text">Digitally</span></span>
+                <span class="title-line-3">Growing Your <span class="highlight-gold">Sales</span></span>
+            </h1>
+
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">
+                A dynamic digital media platform providing <strong>Digital Marketing</strong>,
+                <strong>Printing Solutions</strong>, <strong>PR Consultancy</strong>,
+                and complete <strong>Business Growth</strong> strategies.
+            </p>
+
+            <div class="hero-tags" data-aos="fade-up" data-aos-delay="500">
+                <span class="hero-tag"><i class="fas fa-check-circle"></i> Digital Marketing</span>
+                <span class="hero-tag"><i class="fas fa-check-circle"></i> Social Media</span>
+                <span class="hero-tag"><i class="fas fa-check-circle"></i> Printing</span>
+                <span class="hero-tag"><i class="fas fa-check-circle"></i> PR Consultancy</span>
+            </div>
+
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
+                <a href="{{ url_for('services') }}" class="btn-primary-hero">
+                    <i class="fas fa-arrow-right"></i>
+                    <span>Explore Services</span>
+                    <div class="btn-shine"></div>
+                </a>
+                <a href="{{ url_for('contact') }}" class="btn-outline-hero">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Get Free Consultation</span>
+                </a>
+            </div>
+
+            <!-- Hero Stats Mini -->
+            <div class="hero-mini-stats" data-aos="fade-up" data-aos-delay="700">
+                {% for stat in stats %}
+                <div class="mini-stat">
+                    <span class="mini-stat-num">{{ stat.number }}</span>
+                    <span class="mini-stat-label">{{ stat.label }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Hero Visual -->
+        <div class="hero-visual" data-aos="fade-left" data-aos-delay="400">
+            <div class="hero-card-wrapper">
+                <!-- Main Hero Card -->
+                <div class="hero-main-card">
+                    <div class="hero-logo-display">
+                        <img src="{{ url_for('static', filename='images/logo.png') }}"
+                            alt="The Growth of Sales"
+                            class="hero-logo-img"
+                            id="heroLogoImg"
+                            onerror="this.style.display='none'; document.getElementById('heroLogoFallback').style.display='flex';">
+                        <!-- Fallback Icon if logo not found -->
+                        <div class="hero-logo-fallback" id="heroLogoFallback" style="display:none;">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <h3>The Growth of Sales</h3>
+                    <p>Your Digital Partner</p>
+                    <div class="hero-card-stats">
+                        <div class="card-stat">
+                            <span class="cs-num">500+</span>
+                            <span class="cs-label">Clients</span>
+                        </div>
+                        <div class="card-stat-divider"></div>
+                        <div class="card-stat">
+                            <span class="cs-num">50K+</span>
+                            <span class="cs-label">Emails Sent</span>
+                        </div>
+                        <div class="card-stat-divider"></div>
+                        <div class="card-stat">
+                            <span class="cs-num">5+</span>
+                            <span class="cs-label">Yrs Exp</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Cards -->
+                <div class="float-card float-card-1">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Sales Growth ↑ 300%</span>
+                </div>
+                <div class="float-card float-card-2">
+                    <i class="fas fa-users"></i>
+                    <span>500+ Happy Clients</span>
+                </div>
+                <div class="float-card float-card-3">
+                    <i class="fas fa-envelope"></i>
+                    <span>50K+ Email Reach</span>
+                </div>
+                <div class="float-card float-card-4">
+                    <i class="fab fa-instagram"></i>
+                    <span>Social Media Expert</span>
+                </div>
+            </div>
+        </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+        </div>
+        <span>Scroll Down</span>
+    </div>
+</section>
+
+<!-- ===== TICKER BAR ===== -->
+<div class="ticker-bar">
+    <div class="ticker-label">
+        <i class="fas fa-bolt"></i> We Offer:
+    </div>
+    <div class="ticker-content">
+        <div class="ticker-track">
+            <span>Digital Marketing</span>
+            <span class="ticker-dot">◆</span>
+            <span>Social Media Management</span>
+            <span class="ticker-dot">◆</span>
+            <span>Content Creation</span>
+            <span class="ticker-dot">◆</span>
+            <span>Video Editing</span>
+            <span class="ticker-dot">◆</span>
+            <span>Graphic Designing</span>
+            <span class="ticker-dot">◆</span>
+            <span>Digital Magazine</span>
+            <span class="ticker-dot">◆</span>
+            <span>Stall Fabrication</span>
+            <span class="ticker-dot">◆</span>
+            <span>Printing Solutions</span>
+            <span class="ticker-dot">◆</span>
+            <span>Business Consultancy</span>
+            <span class="ticker-dot">◆</span>
+            <span>PR Consultancy</span>
+            <span class="ticker-dot">◆</span>
+            <!-- Repeat for seamless loop -->
+            <span>Digital Marketing</span>
+            <span class="ticker-dot">◆</span>
+            <span>Social Media Management</span>
+            <span class="ticker-dot">◆</span>
+            <span>Content Creation</span>
+            <span class="ticker-dot">◆</span>
+            <span>Video Editing</span>
+            <span class="ticker-dot">◆</span>
+            <span>Graphic Designing</span>
+            <span class="ticker-dot">◆</span>
+        </div>
+    </div>
+</div>
+
+<!-- ===== STATS SECTION ===== -->
+<section class="stats-section" id="stats">
+    <div class="container">
+        <div class="stats-grid">
+            {% for stat in stats %}
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="stat-icon-wrap">
+                    <i class="{{ stat.icon }}"></i>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-number" data-target="{{ stat.number }}">{{ stat.number }}</span>
+                    <span class="stat-label">{{ stat.label }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT PREVIEW ===== -->
+<section class="about-preview" id="about-preview">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-visual-col" data-aos="fade-right" data-aos-delay="200">
+                <div class="about-image-wrapper">
+                    <div class="about-main-box">
+                        <div class="about-icon-display">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Digital Growth</h3>
+                        <p>Transforming businesses through innovative digital strategies</p>
+                    </div>
+                    <div class="about-accent-box ab-1">
+                        <i class="fas fa-bullhorn"></i>
+                        <span>Marketing</span>
+                    </div>
+                    <div class="about-accent-box ab-2">
+                        <i class="fas fa-print"></i>
+                        <span>Printing</span>
+                    </div>
+                    <div class="about-accent-box ab-3">
+                        <i class="fas fa-handshake"></i>
+                        <span>Consultancy</span>
+                    </div>
+                    <div class="about-exp-badge">
+                        <span class="exp-num">5+</span>
+                        <span class="exp-text">Years of Excellence</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-content-col" data-aos="fade-left" data-aos-delay="300">
+                <div class="section-label">
+                    <span class="label-line"></span>
+                    <span>About Us</span>
+                </div>
+                <h2 class="section-title">
+                    We Drive <span class="gold-text">Real Results</span><br>
+                    for Your Business
+                </h2>
+                <p class="about-desc">
+                    <strong>The Growth of Sales</strong> is an innovative digital media platform
+                    dedicated to helping businesses grow online. We increase your brand visibility
+                    and sales through modern strategies and creative solutions.
+                </p>
+                <p class="about-desc">
+                    We specialize in delivering end-to-end marketing solutions, combining
+                    creativity with strategy to promote brands across digital and offline platforms.
+                    From digital marketing and social media management to content creation,
+                    video production, and stall fabrication.
+                </p>
+
+                <div class="about-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Result-Driven Approach</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Affordable & Flexible Pricing</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Creative & Professional Team</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Fast Turnaround Time</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Personalized Business Solutions</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>B2B Network of 50,000+</span>
+                    </div>
+                </div>
+
+                <div class="about-director">
+                    <div class="director-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="director-info">
+                        <h4>Mr. Navneet Kumar</h4>
+                        <span>Director, The Growth of Sales</span>
+                    </div>
+                </div>
+
+                <a href="{{ url_for('about') }}" class="btn-primary">
+                    <span>Learn More About Us</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICES PREVIEW ===== -->
+<section class="services-preview" id="services-preview">
+    <div class="services-bg-pattern"></div>
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <div class="section-label">
+                <span class="label-line"></span>
+                <span>What We Do</span>
+                <span class="label-line"></span>
+            </div>
+            <h2 class="section-title">Our <span class="gold-text">Core Services</span></h2>
+            <p class="section-subtitle">
+                Comprehensive digital solutions to boost your brand, increase your reach, and multiply your sales.
+            </p>
+        </div>
+
+        <div class="services-grid" id="servicesGrid">
+            {% for service in services %}
+            <div class="service-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="service-icon-wrap">
+                    <div class="service-icon">
+                        <i class="{{ service.icon }}"></i>
+                    </div>
+                    <div class="service-icon-bg"></div>
+                </div>
+                <h3 class="service-title">{{ service.title }}</h3>
+                <p class="service-desc">{{ service.description }}</p>
+                <a href="{{ url_for('services') }}" class="service-link">
+                    Learn More <i class="fas fa-arrow-right"></i>
+                </a>
+                <div class="service-hover-line"></div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="section-cta text-center" data-aos="fade-up">
+            <a href="{{ url_for('services') }}" class="btn-primary">
+                <span>View All Services</span>
+                <i class="fas fa-th-large"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROMOTION STRATEGY ===== -->
+<section class="promo-strategy" id="promo-strategy">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <div class="section-label">
+                <span class="label-line"></span>
+                <span>How We Work</span>
+                <span class="label-line"></span>
+            </div>
+            <h2 class="section-title">Our Client <span class="gold-text">Promotion Strategy</span></h2>
+            <p class="section-subtitle">
+                We promote our clients through multiple effective channels to ensure maximum reach and visibility.
+            </p>
+        </div>
+
+        <div class="strategy-grid">
+            <div class="strategy-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="strategy-num">01</div>
+                <div class="strategy-icon"><i class="fas fa-calendar-check"></i></div>
+                <h3>Monthly Promotions</h3>
+                <p>Every month, we share one video and one post across all major social media platforms including website, Instagram, Facebook, YouTube, and LinkedIn.</p>
+                <div class="strategy-platforms">
+                    <i class="fab fa-instagram" title="Instagram"></i>
+                    <i class="fab fa-facebook-f" title="Facebook"></i>
+                    <i class="fab fa-youtube" title="YouTube"></i>
+                    <i class="fab fa-linkedin-in" title="LinkedIn"></i>
+                </div>
+            </div>
+
+            <div class="strategy-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="strategy-num">02</div>
+                <div class="strategy-icon"><i class="fas fa-envelope-open-text"></i></div>
+                <h3>Email Marketing</h3>
+                <p>We send 50,000+ email campaigns to targeted B2B clients in the market, ensuring your brand reaches the right decision-makers.</p>
+                <div class="strategy-stat">
+                    <span class="ss-num">50,000+</span>
+                    <span class="ss-label">B2B Emails/Campaign</span>
+                </div>
+            </div>
+
+            <div class="strategy-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="strategy-num">03</div>
+                <div class="strategy-icon"><i class="fas fa-video"></i></div>
+                <h3>Professional Video Shoot</h3>
+                <p>We conduct one professional video shoot at the client's factory or showroom to showcase their business, products, and operations.</p>
+                <div class="strategy-badge">
+                    <i class="fas fa-camera"></i> Factory & Showroom
+                </div>
+            </div>
+
+            <div class="strategy-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="strategy-num">04</div>
+                <div class="strategy-icon"><i class="fas fa-newspaper"></i></div>
+                <h3>Daily News & Updates</h3>
+                <p>We share daily news and updates across social media platforms and through email marketing to keep audiences engaged and informed.</p>
+                <div class="strategy-badge">
+                    <i class="fas fa-clock"></i> Daily Engagement
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== INDUSTRIES PREVIEW ===== -->
+<section class="industries-preview" id="industries-preview">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <div class="section-label">
+                <span class="label-line"></span>
+                <span>We Serve</span>
+                <span class="label-line"></span>
+            </div>
+            <h2 class="section-title">Our Focus <span class="gold-text">Industries</span></h2>
+            <p class="section-subtitle">We work across diverse industries delivering specialized digital solutions.</p>
+        </div>
+
+        <div class="industries-grid">
+            {% for industry in industries %}
+            <div class="industry-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 60 }}">
+                <div class="industry-icon">
+                    <i class="{{ industry.icon }}"></i>
+                </div>
+                <span class="industry-name">{{ industry.name }}</span>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="section-cta text-center" data-aos="fade-up">
+            <a href="{{ url_for('industries') }}" class="btn-outline">
+                <span>View All Industries</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS PREVIEW ===== -->
+<section class="testimonials-preview" id="testimonials-preview">
+    <div class="testimonials-bg"></div>
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <div class="section-label">
+                <span class="label-line"></span>
+                <span>Client Reviews</span>
+                <span class="label-line"></span>
+            </div>
+            <h2 class="section-title">What Our <span class="gold-text">Clients Say</span></h2>
+            <p class="section-subtitle">Real stories from real businesses we've helped grow.</p>
+        </div>
+
+        <div class="swiper testimonials-swiper" data-aos="fade-up" data-aos-delay="200">
+            <div class="swiper-wrapper">
+                {% for testimonial in testimonials %}
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">{{ testimonial.text }}</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>{{ testimonial.author }}</h4>
+                                <span>{{ testimonial.position }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+
+        <div class="section-cta text-center" data-aos="fade-up">
+            <a href="{{ url_for('testimonials') }}" class="btn-outline">
+                <span>View All Reviews</span>
+                <i class="fas fa-star"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-banner" id="cta-banner">
+    <div class="cta-bg-shapes">
+        <div class="cta-shape cta-shape-1"></div>
+        <div class="cta-shape cta-shape-2"></div>
+        <div class="cta-shape cta-shape-3"></div>
+    </div>
+    <div class="container">
+        <div class="cta-content" data-aos="zoom-in">
+            <div class="cta-icon-wrap">
+                <i class="fas fa-rocket"></i>
+            </div>
+            <h2>Ready to <span class="gold-text">Grow Your Business?</span></h2>
+            <p>Give us one opportunity and we'll show you the difference.<br>
+               Trust us once, and we'll make sure you see real results.</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('contact') }}" class="btn-cta-primary">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Talk to Our Expert</span>
+                </a>
+                <a href="https://wa.me/919910423182" class="btn-cta-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp Us</span>
+                </a>
+            </div>
+            <div class="cta-contact-info">
+                <a href="tel:+919910423182" class="cta-contact-link">
+                    <i class="fas fa-phone"></i> +91 99104 23182
+                </a>
+                <span class="cta-divider">|</span>
+                <a href="mailto:thegrowthofsales@gmail.com" class="cta-contact-link">
+                    <i class="fas fa-envelope"></i> thegrowthofsales@gmail.com
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

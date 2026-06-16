@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}Testimonials | The Growth of Sales{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero-content" data-aos="fade-up">
+            <div class="breadcrumb">
+                <a href="{{ url_for('index') }}">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Testimonials</span>
+            </div>
+            <h1>Client <span class="gold-text">Testimonials</span></h1>
+            <p>Real stories from real businesses. See how The Growth of Sales has helped companies like yours achieve digital success.</p>
+        </div>
+    </div>
+</section>
+
+<section style="padding: 100px 0; background: var(--primary);">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
+            {% for testimonial in testimonials %}
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">{{ testimonial.text }}</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar"><i class="fas fa-user"></i></div>
+                    <div class="author-info">
+                        <h4>{{ testimonial.author }}</h4>
+                        <span>{{ testimonial.position }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="cta-banner">
+    <div class="cta-bg-shapes">
+        <div class="cta-shape cta-shape-1"></div>
+    </div>
+    <div class="container">
+        <div class="cta-content" data-aos="zoom-in">
+            <div class="cta-icon-wrap"><i class="fas fa-star"></i></div>
+            <h2>Ready to Be Our <span class="gold-text">Next Success Story?</span></h2>
+            <p>Join 500+ satisfied clients who have grown their business with The Growth of Sales.</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('contact') }}" class="btn-cta-primary">
+                    <i class="fas fa-phone-alt"></i><span>Get Started Today</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

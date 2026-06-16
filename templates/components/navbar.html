@@ -1,0 +1,97 @@
+<nav class="navbar" id="mainNav">
+    <div class="nav-container">
+        <!-- Logo -->
+        <a href="{{ url_for('index') }}" class="nav-logo">
+            <div class="logo-wrapper">
+                <!-- Try loading logo image -->
+                <img src="{{ url_for('static', filename='images/logo.png') }}"
+                     alt="The Growth of Sales Logo"
+                     class="logo-img"
+                     id="navLogoImg"
+                     onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex';">
+
+                <!-- Fallback: Show text logo if image fails -->
+                <div class="logo-text-fallback" id="logoFallback" style="display:none;">
+                    <div class="logo-icon-box">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="logo-name-group">
+                        <span class="logo-the">THE</span>
+                        <span class="logo-main">Growth of Sales</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <ul class="nav-links" id="navLinks">
+            <li>
+                <a href="{{ url_for('index') }}"
+                   class="nav-link {% if request.endpoint == 'index' %}active{% endif %}">
+                    <i class="fas fa-home"></i> Home
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('about') }}"
+                   class="nav-link {% if request.endpoint == 'about' %}active{% endif %}">
+                    <i class="fas fa-info-circle"></i> About
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('services') }}"
+                   class="nav-link {% if request.endpoint == 'services' %}active{% endif %}">
+                    <i class="fas fa-cogs"></i> Services
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('industries') }}"
+                   class="nav-link {% if request.endpoint == 'industries' %}active{% endif %}">
+                    <i class="fas fa-industry"></i> Industries
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('testimonials') }}"
+                   class="nav-link {% if request.endpoint == 'testimonials' %}active{% endif %}">
+                    <i class="fas fa-star"></i> Testimonials
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('contact') }}"
+                   class="nav-link {% if request.endpoint == 'contact' %}active{% endif %}">
+                    <i class="fas fa-phone"></i> Contact
+                </a>
+            </li>
+        </ul>
+
+        <!-- CTA Button -->
+        <a href="{{ url_for('contact') }}" class="nav-cta">
+            <i class="fas fa-rocket"></i>
+            <span>Get Started</span>
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="{{ url_for('index') }}" class="mobile-link {% if request.endpoint == 'index' %}active{% endif %}"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="{{ url_for('about') }}" class="mobile-link {% if request.endpoint == 'about' %}active{% endif %}"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="{{ url_for('services') }}" class="mobile-link {% if request.endpoint == 'services' %}active{% endif %}"><i class="fas fa-cogs"></i> Services</a></li>
+            <li><a href="{{ url_for('industries') }}" class="mobile-link {% if request.endpoint == 'industries' %}active{% endif %}"><i class="fas fa-industry"></i> Industries</a></li>
+            <li><a href="{{ url_for('testimonials') }}" class="mobile-link {% if request.endpoint == 'testimonials' %}active{% endif %}"><i class="fas fa-star"></i> Testimonials</a></li>
+            <li><a href="{{ url_for('contact') }}" class="mobile-link {% if request.endpoint == 'contact' %}active{% endif %}"><i class="fas fa-phone"></i> Contact</a></li>
+        </ul>
+        <div class="mobile-social">
+            <a href="{{ company.facebook }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="{{ company.instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="{{ company.youtube }}" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="{{ company.linkedin }}" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+</nav>

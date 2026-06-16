@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% block title %}Our Services | The Growth of Sales{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero-content" data-aos="fade-up">
+            <div class="breadcrumb">
+                <a href="{{ url_for('index') }}">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Services</span>
+            </div>
+            <h1>Our <span class="gold-text">Services</span></h1>
+            <p>Comprehensive digital solutions to boost your brand, increase your reach, and multiply your sales.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Services Grid -->
+<section style="padding: 100px 0; background: var(--primary);">
+    <div class="container">
+        <div class="services-grid" style="grid-template-columns: repeat(3, 1fr);">
+            {% for service in services %}
+            <div class="service-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 60 }}">
+                <div class="service-icon-wrap">
+                    <div class="service-icon"><i class="{{ service.icon }}"></i></div>
+                    <div class="service-icon-bg"></div>
+                </div>
+                <h3 class="service-title">{{ service.title }}</h3>
+                <p class="service-desc">{{ service.description }}</p>
+                <a href="{{ url_for('contact') }}" class="service-link">
+                    Get This Service <i class="fas fa-arrow-right"></i>
+                </a>
+                <div class="service-hover-line"></div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Promotion Strategy -->
+<section class="promo-strategy">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <div class="section-label">
+                <span class="label-line"></span><span>Our Approach</span><span class="label-line"></span>
+            </div>
+            <h2 class="section-title">Client <span class="gold-text">Promotion Strategy</span></h2>
+            <p class="section-subtitle">We promote our clients through multiple effective channels to ensure maximum reach and visibility.</p>
+        </div>
+        <div class="strategy-grid">
+            <div class="strategy-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="strategy-num">01</div>
+                <div class="strategy-icon"><i class="fas fa-calendar-check"></i></div>
+                <h3>Monthly Promotions</h3>
+                <p>Every month, we share one video and one post across all major social media platforms including website, Instagram, Facebook, YouTube, and LinkedIn.</p>
+                <div class="strategy-platforms">
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
+            <div class="strategy-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="strategy-num">02</div>
+                <div class="strategy-icon"><i class="fas fa-envelope-open-text"></i></div>
+                <h3>Email Marketing (B2B)</h3>
+                <p>We send 50,000+ email campaigns to targeted B2B clients in the market ensuring your brand reaches the right decision-makers.</p>
+                <div class="strategy-stat">
+                    <span class="ss-num">50,000+</span>
+                    <span class="ss-label">B2B Emails/Campaign</span>
+                </div>
+            </div>
+            <div class="strategy-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="strategy-num">03</div>
+                <div class="strategy-icon"><i class="fas fa-video"></i></div>
+                <h3>Professional Video Shoot</h3>
+                <p>We conduct one professional video shoot at the client's factory or showroom to showcase their business, products, and operations.</p>
+                <div class="strategy-badge"><i class="fas fa-camera"></i> Factory & Showroom Shoot</div>
+            </div>
+            <div class="strategy-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="strategy-num">04</div>
+                <div class="strategy-icon"><i class="fas fa-newspaper"></i></div>
+                <h3>Daily News & Updates</h3>
+                <p>We share daily news and market updates across social media platforms and through email marketing to keep audiences engaged.</p>
+                <div class="strategy-badge"><i class="fas fa-clock"></i> Daily Engagement</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+    <div class="cta-bg-shapes">
+        <div class="cta-shape cta-shape-1"></div>
+        <div class="cta-shape cta-shape-2"></div>
+    </div>
+    <div class="container">
+        <div class="cta-content" data-aos="zoom-in">
+            <div class="cta-icon-wrap"><i class="fas fa-rocket"></i></div>
+            <h2>Ready to <span class="gold-text">Boost Your Sales?</span></h2>
+            <p>Contact us today and let's build a powerful digital strategy for your business.</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('contact') }}" class="btn-cta-primary">
+                    <i class="fas fa-phone-alt"></i><span>Get Free Consultation</span>
+                </a>
+                <a href="https://wa.me/919910423182" class="btn-cta-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i><span>WhatsApp Us</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

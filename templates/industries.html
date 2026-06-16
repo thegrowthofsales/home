@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block title %}Industries We Serve | The Growth of Sales{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero-content" data-aos="fade-up">
+            <div class="breadcrumb">
+                <a href="{{ url_for('index') }}">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Industries</span>
+            </div>
+            <h1>Our Focus <span class="gold-text">Industries</span></h1>
+            <p>We work across diverse industries delivering specialized digital solutions tailored to each sector's unique needs.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Industries Grid -->
+<section style="padding: 100px 0; background: var(--primary);">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <div class="section-label">
+                <span class="label-line"></span><span>Industries</span><span class="label-line"></span>
+            </div>
+            <h2 class="section-title">Sectors We <span class="gold-text">Serve</span></h2>
+            <p class="section-subtitle">From hardware and furniture to lighting and tiles, we understand the nuances of each industry.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
+            {% for industry in industries %}
+            <div class="industry-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
+                <div class="industry-icon"><i class="{{ industry.icon }}"></i></div>
+                <span class="industry-name">{{ industry.name }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- We Work With -->
+<section style="padding: 100px 0; background: var(--primary-light);">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <div class="section-label">
+                <span class="label-line"></span><span>Our Clients</span><span class="label-line"></span>
+            </div>
+            <h2 class="section-title">We Work <span class="gold-text">With</span></h2>
+            <p class="section-subtitle">We serve a diverse range of professionals and businesses across the industry.</p>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 20px;">
+            {% for client in clients %}
+            <div class="hero-tag" data-aos="fade-up" data-aos-delay="{{ loop.index * 30 }}">
+                <i class="fas fa-check-circle"></i>
+                {{ client }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+    <div class="cta-bg-shapes">
+        <div class="cta-shape cta-shape-1"></div>
+        <div class="cta-shape cta-shape-2"></div>
+    </div>
+    <div class="container">
+        <div class="cta-content" data-aos="zoom-in">
+            <div class="cta-icon-wrap"><i class="fas fa-industry"></i></div>
+            <h2>Don't See Your Industry? <span class="gold-text">We Still Help You!</span></h2>
+            <p>We work with businesses across all sectors. Contact us to discuss how we can help grow your specific business.</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('contact') }}" class="btn-cta-primary">
+                    <i class="fas fa-phone-alt"></i><span>Contact Us Now</span>
+                </a>
+                <a href="https://wa.me/919910423182" class="btn-cta-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i><span>WhatsApp Us</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
