@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "outputDirectory": ".",
   "builds": [
     {
       "src": "app.py",
@@ -7,6 +8,18 @@
     }
   ],
   "routes": [
+    {
+      "src": "/static/css/style.css",
+      "dest": "/static/css/style.css"
+    },
+    {
+      "src": "/static/js/main.js",
+      "dest": "/static/js/main.js"
+    },
+    {
+      "src": "/static/images/logo.png",
+      "dest": "/static/images/logo.png"
+    },
     {
       "src": "/static/(.*)",
       "dest": "/static/$1"
